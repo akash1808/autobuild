@@ -17,10 +17,13 @@ python-oslo-context
 python-oslo.config
 python-oslo.context
 python-oslo.db
+python-oslo-db
 python-oslo.i18n
 python-oslo-i18n
 python-oslo.log
+python-oslo-log
 python-oslo.messaging
+python-oslo-messaging
 python-oslo-serialization
 python-oslo.serialization
 python-oslo-utils
