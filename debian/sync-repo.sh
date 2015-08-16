@@ -72,7 +72,12 @@ do
 		else
 			cd $BASEDIR/$PROJ;
 			echo "${PROJ}:" >> $GITLOG;
-			$GIT log $CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' >> $GITLOG;
+			if [ "$PROJ" == "oslo.db" ]
+			then
+				$GIT log $CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' >> $GITLOG;
+			else
+				$GIT log $PREV_LOG..$CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' >> $GITLOG;
+			fi
 			cd $BASEDIR;
 		fi
 	fi
