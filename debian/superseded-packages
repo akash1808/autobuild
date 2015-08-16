@@ -29,6 +29,7 @@ python-oslo.serialization
 python-oslo-utils
 python-oslo.utils
 python-oslo.middleware
+python-oslo.service
 python-aioeventlet
 python-trollius
 python-paramiko
@@ -44,3 +45,6 @@ python-testtools
 python-websockify
 python-stevedore
 python-os-testr
+python-debtcollector
+python-futurist
+python-cachetools
