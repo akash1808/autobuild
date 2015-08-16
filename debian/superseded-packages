@@ -28,6 +28,9 @@ python-oslo-serialization
 python-oslo.serialization
 python-oslo-utils
 python-oslo.utils
+python-oslo.middleware
+python-aioeventlet
+python-trollius
 python-paramiko
 python-posix-ipc
 python-proliantutils
