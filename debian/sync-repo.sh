@@ -62,7 +62,7 @@ do
 	then
 		if [ "$PROJ" == "autobuild" ]
 		then
-			$GIT log $CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' | grep -v '] Build number' > $GITLOGTMP;
+			$GIT log $PREV_LOG..$CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' | grep -v '] Build number' > $GITLOGTMP;
 			if [ $(wc -l $GITLOGTMP | cut -f1 -d' ') -gt 0 ]
 			then
 				echo "Packaging:" >> $GITLOG;
@@ -72,7 +72,7 @@ do
 		else
 			cd $BASEDIR/$PROJ;
 			echo "${PROJ}:" >> $GITLOG;
-			$GIT log $PREV_LOG..$CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' >> $GITLOG;
+			$GIT log $CUR_LOG --pretty='format:  [%h] %<(55,trunc)%s' >> $GITLOG;
 			cd $BASEDIR;
 		fi
 	fi
