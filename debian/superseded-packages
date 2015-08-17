@@ -48,3 +48,5 @@ python-os-testr
 python-debtcollector
 python-futurist
 python-cachetools
+python-wrapt
+python-monotonic
