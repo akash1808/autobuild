@@ -1,7 +1,8 @@
 #!/bin/sh -e
 
 if [ "$1" = "configure" ]; then
-    chown root:root /etc/nova/rootwrap.d/compute.filters
+#    chown root:root /etc/nova/rootwrap.d/compute.filters
+     echo "hello"
 fi
 
 #DEBHELPER#

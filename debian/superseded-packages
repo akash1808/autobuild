@@ -8,6 +8,13 @@ nova-baremetal
 nova-cells
 nova-cert
 nova-compute
+nova-compute-qemu
+nova-compute-lxc
+nova-compute-kvm
+nova-compute-libvirt
+nova-compute-vmware
+nova-compute-xen
+nova-common
 nova-conductor
 nova-consoleauth
 nova-console
@@ -17,6 +24,7 @@ nova-objectstore
 nova-scheduler
 nova-spiceproxy
 nova-xvpncproxy
+python-nova
 python-cinderclient
 python-glanceclient
 python-ironic
