@@ -1,6 +1,0 @@
-Package: python-nova
-Architecture: all
-Depends: rjil-cicd (=${binary:Version})
-Description: python-nova package
- Automatically generated python-nova package
-
