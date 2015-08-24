@@ -28,14 +28,14 @@ override_dh_auto_clean: debian/control $(patsubst %,clean/%,$(PROJECTS))
 override_dh_auto_build: debian/control $(patsubst %,build/%,$(PROJECTS))
 
 override_dh_auto_install: 
-        debian/control $(patsubst %,install/%,$(PROJECTS)) debian/rjil-cicd.substvars
-        dh_install --fail-missing -Xbin/nova-all
-        chmod 440 $(CURDIR)/debian/nova-common/etc/sudoers.d/nova_sudoers
-        install -D -m 644 debian/source_nova.py debian/php5-common/usr/share/apport/package-hooks/source_nova.py
-        install -D -m 0644 $(CURDIR)/etc/nova/logging_sample.conf $(CURDIR)/debian/nova-common/etc/nova/logging.conf
-        for hypervisor in qemu kvm xen lxc vmware; do \
-                install -D -m 0600 $(CURDIR)/debian/nova-compute-$${hypervisor}.conf $(CURDIR)/debian/nova-compute-$${hypervisor}/etc/nova/nova-compute.conf; \
-        done
+	debian/control $(patsubst %,install/%,$(PROJECTS)) debian/rjil-cicd.substvars
+	dh_install --fail-missing -Xbin/nova-all
+	chmod 440 $(CURDIR)/debian/nova-common/etc/sudoers.d/nova_sudoers
+	install -D -m 644 debian/source_nova.py debian/php5-common/usr/share/apport/package-hooks/source_nova.py
+	install -D -m 0644 $(CURDIR)/etc/nova/logging_sample.conf $(CURDIR)/debian/nova-common/etc/nova/logging.conf
+	for hypervisor in qemu kvm xen lxc vmware; do \
+		install -D -m 0600 $(CURDIR)/debian/nova-compute-$${hypervisor}.conf $(CURDIR)/debian/nova-compute-$${hypervisor}/etc/nova/nova-compute.conf; \
+	done
 
 
 clean/%: %/debian
