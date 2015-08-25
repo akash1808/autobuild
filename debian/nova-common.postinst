@@ -51,7 +51,7 @@ if [ "$1" = "configure" ]; then
            -group nogroup -a -user nova -exec chown nova:nova {} \;
     fi
 
-    chmod 0640 /etc/nova/nova.conf
+#    chmod 0640 /etc/nova/nova.conf
     chmod 0640 /etc/nova/policy.json
     chmod 0640 /etc/nova/api-paste.ini
     chmod 0750 /etc/nova
@@ -60,11 +60,11 @@ if [ "$1" = "configure" ]; then
     chown root:root /etc/nova/rootwrap.d
     chmod 0755 /etc/nova/rootwrap.d
 
-    if ! grep -qE "^(sql_)?connection( )?=.*" /etc/nova/nova.conf || \
-         grep -qE "^(sql_)?connection.*sqlite.*" /etc/nova/nova.conf
-    then
-      su -s /bin/sh -c 'nova-manage db sync' nova
-    fi
+ #   if ! grep -qE "^(sql_)?connection( )?=.*" /etc/nova/nova.conf || \
+ #        grep -qE "^(sql_)?connection.*sqlite.*" /etc/nova/nova.conf
+ #   then
+ #     su -s /bin/sh -c 'nova-manage db sync' nova
+  #  fi
 
     if [ -e /var/lib/nova/nova.sqlite ]
     then

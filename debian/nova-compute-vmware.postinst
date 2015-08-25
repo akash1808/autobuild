@@ -1,8 +1,9 @@
 #!/bin/sh -e
 
 if [ "$1" = "configure" ]; then
-  chown nova:nova /etc/nova/nova-compute.conf
-  chmod 0600 /etc/nova/nova-compute.conf
+  #chown nova:nova /etc/nova/nova-compute.conf
+  #chmod 0600 /etc/nova/nova-compute.conf
+  echo "hello"
 fi
 
 #DEBHELPER#
